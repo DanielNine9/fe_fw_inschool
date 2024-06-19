@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="/hinh/logo.png" />
+    <title>Bài 3</title>
+  </head>
+  <body ng-app="myApp">
+    <div class="container" ng-controller="myCtrl">
+      <div class="row">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Hình</th>
+              <th>Họ và tên</th>
+              <th>Email</th>
+              <th>Ngày sinh</th>
+              <th>Giới tính</th>
+              <th>Điểm</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="sv in svs">
+              <td><img src="{{sv.poto}}" width="100" /></td>
+              <td>{{sv.fullname}}</td>
+              <td>{{sv.email}}</td>
+              <td>{{sv.birthday}}</td>
+              <td>{{sv.gender}}</td>
+              <td>{{sv.marks}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function ($scope) {
+        $scope.svs = [
+          {
+            fullname: "Đinh Quốc Huy",
+            email: "huydqpc07859@fpt.edu.vn",
+            birthday: "17-11-2003",
+            gender: "Nam",
+            marks: "10",
+            poto: "./images/img1.jpg",
+          },
+          {
+            fullname: "Đinh Quốc Tiến",
+            email: "tiendqpc07858@fpt.edu.vn",
+            birthday: "17-11-2003",
+            gender: "Nam",
+            marks: "10",
+            poto: "./images/img2.jpg",
+          },
+          {
+            fullname: "Đinh Quốc Hoàng",
+            email: "hoangdqpc07857@fpt.edu.vn",
+            birthday: "17-11-2003",
+            gender: "Nam",
+            marks: "10",
+            poto: "./images/img3.jpg",
+          },
+        ];
+      });
+    </script>
+  </body>
+</html>

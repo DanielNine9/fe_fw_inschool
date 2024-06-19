@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <button
+                class="btn btn-primary"
+                data-toggle="modal"
+                data-target="#alert"
+            >
+                Nhập Lương
+            </button>
+        </div>
+    </body>
+    <div class="modal" id="alert" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        <span>&times;</span>
+                    </button>
+                    <div class="modal-title">
+                        <span class="glyphicon glyphicon-edit"></span>
+                        NHẬP LƯƠNG THÁNG 12
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label>Mã nhân viên</label>
+                                <input class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label>Họ và tên</label>
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label>Câu lạc bộ</label>
+
+                                <select name="" id="" class="form-control">
+                                    <option value="DaNang">Đà Nẵng</option>
+                                    <option value="CanTho">Cần Thơ</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label>Lương</label>
+                                <input class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-sm-6">
+                                <label>Thưởng</label>
+                                <input class="form-control" />
+                            </div>
+                            <div class="form-group col-sm-6">
+                                <label>Phụ cấp</label>
+                                <input class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Ghi chú</label>
+                            <textarea class="form-control" row="3"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button
+                        class="btn btn-default"
+                        data-toggle="modal"
+                        data-target="#alert"
+                        type="button"
+                    >
+                        <span class="glyphicon glyphicon-floppy-save"></span>
+                        Lưu
+                    </button>
+                    <button class="btn btn-default" data-dismiss="modal">
+                        <span class="glyphicon glyphicon-stop"></span>
+                        Hủy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</html>

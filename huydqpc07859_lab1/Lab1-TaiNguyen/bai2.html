@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Shopping Maill</title>
+    <script src="js/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/poly.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <style>
+    a {
+      color: white;
+    }
+    body {
+      padding: 0;
+      margin: 0 auto;
+      background-color: aliceblue;
+    }
+    header {
+      position: relative;
+    }
+    .shopping-mall {
+      position: absolute;
+      bottom: 20px;
+      font-variant: small-caps;
+    }
+    .shopping-mall > h1 {
+      font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+      font-size: 50px;
+      color: white;
+      letter-spacing: 0.3px;
+      text-shadow: 0 0 2px black;
+      padding-bottom: 0px;
+      border-bottom: 1px dotted gray;
+      margin: 0px;
+    }
+    .shopping-mall > h5 {
+      margin-top: 5px;
+      letter-spacing: 0.5px;
+    }
+    nav {
+      background-color: black !important;
+      margin-bottom: 0 !important;
+    }
+    nav a {
+      color: white;
+    }
+    .poly-cart {
+      margin-top: 5px;
+    }
+    .poly-cart ul {
+      padding: 0px;
+      margin: 0px;
+      list-style: none;
+      font-variant: small-caps;
+    }
+    .poly-cart .panel-heading strong {
+      font-variant: small-caps;
+      font-size: larger;
+      text-shadow: 0 0 2px darkgray;
+    }
+    .container > div > * {
+      min-height: 300px;
+    }
+    .poly-prod {
+      text-align: center;
+      padding: 5px;
+    }
+    .poly-prod .panel-body img {
+      height: 150px;
+      max-width: 95%;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <header class="row">
+        <div class="shopping-mall">
+          <h1>Online Shopping Mall</h1>
+          <h5>The center point of the professional programing</h5>
+        </div>
+        <img src="images/header-object.png" alt="" class="pull-right" />
+      </header>
+      <nav class="navbar navbar-reverse" style="background: black">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button
+              type="button"
+              class="navbar-toggle collapsed"
+              data-toggle="collapse"
+              data-target="#bs-example-navbar-collapse-1"
+              aria-expanded="false"
+            >
+              <span class="sr-only">Toggle navigation</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                fill="currentColor"
+                class="bi bi-list"
+                viewBox="0 0 16 16"
+                style="color: white"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"
+                />
+              </svg>
+            </button>
+
+            <a class="navbar-brand active" href="#">
+              <span class="glyphicon glyphicon-home"></span> Trang chủ</a
+            >
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div
+            class="collapse navbar-collapse"
+            id="bs-example-navbar-collapse-1"
+          >
+            <ul class="nav navbar-nav">
+              <li>
+                <a href="#"
+                  ><span class="glyphicon glyphicon-th-list"></span> Giới
+                  thiệu</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><span class="glyphicon glyphicon-earphone"></span> Liên hệ</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><span class="glyphicon glyphicon-envelope"></span> Góp ý</a
+                >
+              </li>
+              <li>
+                <a href="#"
+                  ><span class="glyphicon glyphicon-question-sign"></span> Hỏi
+                  đáp</a
+                >
+              </li>
+              <li class="dropdown">
+                <a
+                  href="#"
+                  class="dropdown-toggle"
+                  data-toggle="dropdown"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  ><span class="glyphicon glyphicon-user"></span> Tài khoản
+                  <span class="caret"></span
+                ></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Đăng nhập</a></li>
+                  <li><a href="#">Quên mật khẩu</a></li>
+                  <li><a href="#">Đăng ký thành viên</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Đăng xuất</a></li>
+                  <li><a href="#">Đổi mật khẩu</a></li>
+                  <li><a href="#">Cập nhật hồ sơ</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Đơn hàng</a></li>
+                  <li><a href="#">Hàng đã mua</a></li>
+                </ul>
+              </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">English</a></li>
+              <li><a href="#">Tiếng Việt</a></li>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+      </nav>
+      <div class="row">
+        <article class="col-sm-9">
+          
+          <div class="col col-sm-6 col-md-4 poly-prod">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">Laptop</h4>
+              </div>
+              <div class="panel-body">
+                <img src="images/iphone14.jpeg" alt="" />
+              </div>
+              <div class="panel-footer">15.000.000 VND</div>
+            </div>
+          </div>
+          <div class="col col-sm-6 col-md-4 poly-prod">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">Laptop</h4>
+              </div>
+              <div class="panel-body">
+                <img src="images/iphone14.jpeg" alt="" />
+              </div>
+              <div class="panel-footer">35.000.000 VND</div>
+            </div>
+          </div>
+          <div class="col col-sm-6 col-md-4 poly-prod">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">Laptop</h4>
+              </div>
+              <div class="panel-body">
+                <img src="images/iphone14.jpeg" alt="" />
+              </div>
+              <div class="panel-footer">12.000.000 VND</div>
+            </div>
+          </div>
+          <div class="col col-sm-6 col-md-4 poly-prod">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">Laptop</h4>
+              </div>
+              <div class="panel-body">
+                <img src="images/iphone14.jpeg" alt="" />
+              </div>
+              <div class="panel-footer">9.490.000 VND</div>
+            </div>
+          </div>
+          <div class="col col-sm-6 col-md-4 poly-prod">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">Laptop</h4>
+              </div>
+              <div class="panel-body">
+                <img src="images/iphone14.jpeg" />
+              </div>
+              <div class="panel-footer">10.990.000 VND</div>
+            </div>
+          </div>
+          <div class="col col-sm-6 col-md-4 poly-prod">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4 class="panel-title">Laptop</h4>
+              </div>
+              <div class="panel-body">
+                <img src="images/iphone14.jpeg" alt="" />
+              </div>
+              <div class="panel-footer">11.550.000 VND</div>
+            </div>
+          </div>
+        </article>
+        <aside class="col-sm-3">
+          <div class="poly-cart">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <img src="images/shoppingcart.gif" alt="" class="col-sm-5" />
+                <ul class="col-sm-7">
+                  <li>100 items</li>
+                  <li>$ 56.8</li>
+                  <li>
+                    <a href="" style="color: rgb(174, 174, 255)">View Cart</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <form method="post">
+                  <input placeholder="Keywords" class="form-control" />
+                </form>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <span class="glyphicon glyphicon-th-list"></span>
+                <strong>Chủng loại</strong>
+              </div>
+              <div class="list-group"></div>
+              <a href="" class="list-group-item">Điện thoại di động</a>
+              <a href="" class="list-group-item">Máy tính xách tay</a>
+              <a href="" class="list-group-item">Máy tính để bàn</a>
+              <a href="" class="list-group-item">Quạt máy</a>
+              <a href="" class="list-group-item">TV</a>
+              <a href="" class="list-group-item">Tủ lạnh</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+      <footer class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading text-center">
+            <p>FPT Polytechnic &copy; 2017. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

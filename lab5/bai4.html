@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="js/angular.min.js"></script>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body ng-app="myapp">
+        <div ng-controller="myctrl" class="container">
+            <form action="">
+                <div class="form-group">
+                    <label for="">Họ và tên:</label>
+                    <input ng-model="student.name" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="">Ngày sinh:</label>
+                    <input ng-model="student.birthday" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="">Điểm</label>
+                    <input ng-model="student.mark" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <button
+                        class="btn btn-primary"
+                        type="button"
+                        ng-click="insert()"
+                        ng-show="index==-1"
+                    >
+                        Thêm
+                    </button>
+                    <button
+                        class="btn btn-light"
+                        type="button"
+                        ng-click="update()"
+                        ng-hide="index==-1"
+                    >
+                        Sửa
+                    </button>
+                    <button
+                        class="btn btn-danger"
+                        type="button"
+                        ng-click="delete()"
+                        ng-hide="index==-1"
+                    >
+                        Xóa
+                    </button>
+                    <button
+                        class="btn btn-dark"
+                        type="button"
+                        ng-click="cancel()"
+                    >
+                        Hủy
+                    </button>
+                    <button
+                        class="btn btn-warning"
+                        type="button"
+                        ng-click="clear()"
+                    >
+                        Mới
+                    </button>
+                </div>
+            </form>
+            <table class="table table-bordered table-hover">
+                <tr>
+                    <th>STT</th>
+                    <th>Họ và tên</th>
+                    <th>Ngày sinh</th>
+                    <th>Điểm</th>
+                    <th>Xếp loại</th>
+                    <th></th>
+                </tr>
+                <tr ng-repeat="student in students">
+                    <td>{{$index+1}}</td>
+                    <td>{{student.name}}</td>
+                    <td>{{student.birthday}}</td>
+                    <td>{{student.mark}}</td>
+                    <td>
+                        <span ng-if="student.mark <5">Yếu/ Kém</span>
+                        <span ng-if="student.mark >=5 && student.mark <=8">Trung bình/ Khá</span>
+                        <span ng-if="student.mark >8">Giỏi/ Xuất sắc</span>
+                    </td>
+                    <td>
+                        <a href="#" ng-click="edit($index)">Sửa</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+    <script>
+        var app = angular.module("myapp", []);
+        app.controller("myctrl", function ($scope) {
+            $scope.students = [
+                {
+                    name: "Trương Quốc Toản",
+                    birthday: "04-05-2004",
+                    mark: 9.5,
+                },
+                {
+                    name: "Jotaro",
+                    birthday: "03-12-1995",
+                    mark: 5,
+                },
+            ];
+            $scope.student = {};
+            $scope.index = -1;
+
+            $scope.clear = function () {
+                $scope.student = {};
+                $scope.index = -1;
+            };
+            $scope.insert = function () {
+                $scope.students.push(angular.copy($scope.student));
+                $scope.clear();
+            };
+            $scope.update = function () {
+                $scope.students[$scope.index] = angular.copy($scope.student);
+            };
+            $scope.delete = function () {
+                $scope.students.splice($scope.index, 1);
+                $scope.clear();
+            };
+            $scope.cancel = function () {
+                if ($scope.index == -1) {
+                    $scope.clear();
+                } else {
+                    $scope.edit($scope.index);
+                }
+            };
+            $scope.edit = function (index) {
+                $scope.index = index;
+                $scope.student = angular.copy($scope.students[index]);
+            };
+        });
+    </script>
+</html>

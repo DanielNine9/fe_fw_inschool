@@ -1,0 +1,36 @@
+.poly-prod{
+    text-align: center;
+    padding-top: 1rem;
+}
+.poly-prod .card img{
+    height: 250px;
+}
+.carousel-item img{
+    height: 350px;
+}
+
+aside>.list-group>h5{
+    font-variant: small-caps;
+    font-size: larger;
+    text-shadow: 0 0 2px darkgray;
+}
+.card{
+    width: 25rem;
+}
+.carousel-control-prev{
+    left: 12px !important;
+    transition: .4s;
+}
+.carousel-control-prev:hover{
+    background-color: rgba(199, 199, 199, 0.775);
+}
+.carousel-control-next{
+    right: 12px !important;
+    transition: .4s;
+}
+.carousel-control-next:hover{
+    background-color: rgba(199, 199, 199, 0.775);   
+}
+.container-fluid{
+    max-width: 1200px;
+}

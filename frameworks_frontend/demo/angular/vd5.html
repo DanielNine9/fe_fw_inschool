@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-app="myapp">
+    <div class="" ng-controller="myctrl">
+      <input type="number" ng-model="a" />
+      <input type="number" ng-model="b" />
+      <button ng-click="tinh()">Tinh</button>
+      <div ng-bind="result"></div>
+    </div>
+
+    <script>
+      angular.module("myapp", []).controller("myctrl", function ($scope) {
+        //Khai báo hàm tính bình phương
+        $scope.tinh = function () {
+          //Khai báo biến result bằng bình phương của biến number
+          $scope.result = Number($scope.a) + Number($scope.b);
+          
+        };
+      });
+    </script>
+  </body>
+</html>

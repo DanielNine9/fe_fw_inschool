@@ -1,0 +1,43 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "name": "Xe đạp tập Kingsport Classic E-07",
+            "price": 200000,
+       
+            "image": "https://kingsport.vn/image/webp/8c02343cbc11f8f32806937fb79e396c-300x300.webp",
+            "check": true
+        },
+        {
+            "id": "2",
+            "name": "Xe đạp tập Kingsport Classic E-08",
+            "price": 10000000,
+          
+            "image": "https://kingsport.vn/image/webp/d01eca181d119129cd02ac8b3d84a400-300x300.webp",
+            "check": false
+        },
+        {
+            "id": "3",
+            "name": "Xe đạp tập Kingsport Classic E-09",
+            "price": 15000000,
+        
+            "image": "https://kingsport.vn/image/webp/fc9fec6737b052210deee79c2bff71f0-300x300.webp",
+            "check": true
+        },
+        {
+            "id": "4",
+            "name": "Xe đạp tập Kingsport Classic E-10",
+            "price": 1500000,
+      
+            "image": "https://kingsport.vn/image/webp/07a9e7a691ccec035b81ba73e01cf049-300x300.webp",
+            "check": false
+        },
+        {
+            "id": "5",
+            "name": "Xe đạp tập Kingsport Classic E-11",
+            "price": 2000000,
+            "image": "https://kingsport.vn/image/webp/8c02343cbc11f8f32806937fb79e396c-300x300.webp",
+            "check": true
+        }
+    ]
+}

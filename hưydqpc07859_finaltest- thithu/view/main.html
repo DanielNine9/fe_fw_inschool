@@ -1,0 +1,217 @@
+<div ng-controller="homeController">
+  <div style="background-color: white">
+    <div class="container">
+      <nav style="--bs-breadcrumb-divider: '>'" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item active" aria-current="page">Trang chủ</li>
+          <li class="breadcrumb-item active" aria-current="page">
+            Xe đạp thể thao
+          </li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="container">
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://nemvanthanh.vn/wp-content/uploads/2020/05/banner-sub-about.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://nemvanthanh.vn/wp-content/uploads/2020/05/banner-sub-about.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://nemvanthanh.vn/wp-content/uploads/2020/05/banner-sub-about.jpg"
+              class="d-block w-100"
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+    <div class="container row mx-auto my-4">
+      <div class="col-lg-3 col-12">
+        <strong>TÌM KIẾM SẢN phẩm</strong>
+        <hr />
+        <input
+          type="text"
+          class="form-control"
+          ng-model="search_name"
+          placeholder="Nhập tên sản phẩm..."
+        />
+        <strong>BỘ LỌC</strong>
+        <div class="d-flex align-items-center">
+          <input
+            type="number"
+            class="w-100 w-lg-50 form-control"
+            ng-model="from"
+            placeholder="FROM"
+          />
+          -
+          <input
+            type="number"
+            class="w-100 w-lg-50 form-control"
+            ng-model="to"
+            placeholder="TO"
+          /><strong>VNĐ</strong>
+        </div>
+        <input
+          class="w-100"
+          type="range"
+          ng-model="to"
+          name=""
+          min="0"
+          max="10000000"
+          id=""
+        />
+        <div class="text-center">
+          <button class="btn btn-primary text-center btn-sm">GO</button>
+        </div>
+        <strong>FILTER</strong>
+        <div>
+          <div class="d-flex justify-content-between">
+            <p>(4)</p>
+            <p>
+              <i class="text-warning bi-star-fill"></i>
+              <i class="text-warning bi-star-fill"></i>
+              <i class="text-warning bi-star-fill"></i>
+              <i class="text-warning bi-star-fill"></i>
+              <i class="text-warning bi-star-fill"></i>
+            </p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p>(4)</p>
+            <p>
+              <i class="text-warning bi-star-fill"></i>
+              <i class="text-warning bi-star-fill"></i>
+              <i class="text-warning bi-star-fill"></i>
+              <i class="text-warning bi-star-fill"></i>
+              <i class="text-warning bi-star-fill"></i>
+            </p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p>(4)</p>
+            <p>
+              <i class="text-warning bi-star-fill"></i>
+              <i class="text-warning bi-star-fill"></i>
+              <i class="text-warning bi-star-fill"></i>
+              <i class="text-warning bi-star-fill"></i>
+              <i class="text-warning bi-star-fill"></i>
+            </p>
+          </div>
+          <strong> CHẤT LIỆU </strong>
+          <hr />
+          <p>Cao su thiên nhiên</p>
+          <p>Cao su thiên nhiên</p>
+          <p>Cao su thiên nhiên</p>
+          <strong> ĐỘ DÀY </strong>
+          <hr />
+          <p>3cm</p>
+          <p>6cm</p>
+          <p>9cm</p>
+        </div>
+      </div>
+      <div class="col-lg-9 col-12">
+        <div
+          class="my-2 px-4 py-2 d-flex justify-content-between align-items-center mx-2"
+          style="background-color: whitesmoke"
+        >
+          <h3 style="font-size: 16px">Hiển thị tất cả sản phẩm</h3>
+          <select ng-model="sort" class="form-select" name="" id="">
+            <option value="">Mặc định</option>
+            <option value="-price">Giá giảm dần</option>
+            <option value="price">Giá tăng dần</option>
+          </select>
+        </div>
+        <div class="row container mx-auto p-0">
+          <div
+            ng-repeat="product in products  | filter: customFilter | orderBy : sort"
+            class="col-lg-4 col-sm-6 col-12 mb-4"
+          >
+            <div class="card w-100" style="width: 18rem">
+              <img src="{{product.image}}" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <div class="d-flex align-items-end flex-column">
+                  <del
+                    class="card-title float-right text-danger"
+                    style="font-size: 10px"
+                    >{{product.price | currency : "" : 0.0 }} VNĐ</del
+                  >
+                  <h5
+                    class="card-title float-right text-danger"
+                    style="font-size: 16px"
+                  >
+                    {{(product.price - (product.price * product.discount) )|
+                    currency : "" : 0.0 }} VNĐ
+                  </h5>
+                </div>
+                <h5 class="card-title" style="font-size: 16px">
+                  {{product.name}}
+                </h5>
+                <div class="d-flex gap-1">
+                  <i
+                    ng-repeat="rate in createArray(product.rating) track by $index"
+                    class="text-warning bi-star-fill"
+                  ></i>
+                  <i
+                    ng-repeat="rate in createArray(5 - product.rating) track by $index"
+                    class="bi bi-star"
+                  ></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
